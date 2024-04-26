@@ -1,0 +1,62 @@
+  .home-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  } 
+ 
+  .home-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../components/photos/Screenshot\ 2024-04-04\ 161030.png'); 
+    background-size: contain;
+    background-position: center;
+    z-index: -1; /* Set a negative z-index to send the background behind other content */
+  }
+
+  .home-parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../components/photos/2a.png');
+    background-size: cover;
+    background-position: center;
+    animation: backgroundAnimation 60s infinite alternate linear;
+    z-index: -1; /* Set z-index to send the parallax background behind other content */
+    opacity: 0;
+    animation: fadeIn 1s forwards 5s;
+  }
+
+  .animated-text {
+    /* padding-top: 50px; */
+    color: black; /* Set text color to white */
+     
+  }
+.home-div{
+  margin-top: 50px;
+  padding-top: 50px;
+  text-align: center;
+}
+
+  @keyframes backgroundAnimation {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+    
+  } 
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

@@ -1,0 +1,166 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Cycle tyre",
+      "category": "CYCLE",
+      "image": "https://ipfs.io/ipfs/QmY1g88sqdmmPqxUNbyBqsjxQjpQQMAsgSn6EQVnsJf77W",
+      "price": "1.5",
+      "rating": 3,
+      "stock": 6
+    },
+    {
+      "id": 2,
+      "name": "Cycle handle",
+      "category": "CYCLE",
+      "image": "https://ipfs.io/ipfs/QmboK8e7zheponAprEo6FDbajm1XwBzD2XfZaaPqkWvWqQ",
+      "price": "0.75",
+      "rating": 4,
+      "stock": 1
+    },
+    {
+      "id": 3,
+      "name": "Cycle pedal",
+      "category": "CYCLE",
+      "image": "https://ipfs.io/ipfs/QmRg323vxZbV3BBCnbkVNaY6qeQ2gtzpxtMevbTSZCyXsv",
+      "price": "0.5",
+      "rating": 3,
+      "stock": 7
+    },
+    {
+      "id": 4,
+      "name": "Cycle chain",
+      "category": "CYCLE",
+      "image": "https://ipfs.io/ipfs/QmaviEuD3NYxFYJizzwbrs7iLfDTQoPTvYiD61LF5hq1xn",
+      "price": "1",
+      "rating": 4,
+      "stock": 3
+    },
+    {
+      "id": 5,
+      "name": "Cycle gear",
+      "category": "CYCLE",
+      "image": "https://ipfs.io/ipfs/QmcVXGmrWhDdWv1cPVwVkSzN2bg6BBxSR1GEQiwAFUhbwB",
+      "price": "2",
+      "rating": 5,
+      "stock": 2
+    },
+    {
+      "id": 6,
+      "name": "Cycle seat",
+      "category": "CYCLE",
+      "image": "https://ipfs.io/ipfs/QmdGRbZRXKfBXXSCgYM9R8Gf44XqNqkSuH64Bfiq2m86pD",
+      "price": "0.25",
+      "rating": 2,
+      "stock": 1
+    },
+    {
+      "id": 7,
+      "name": "Bike head light",
+      "category": "BIKE",
+      "image": "https://ipfs.io/ipfs/QmfCDk4t9Z4VTbxsgCYfV63WixJqygtkCxjiSadaHwRmkT",
+      "price": "0.25",
+      "rating": 5,
+      "stock": 0
+    },
+    {
+      "id": 8,
+      "name": "Bike tail light",
+      "category": "BIKE",
+      "image": "https://ipfs.io/ipfs/QmWpUSV5J9p6mgcLzytRDN9dpaAj6wEUzscj6D3YjgxZRo",
+      "price": "0.10",
+      "rating": 4,
+      "stock": 0
+    },
+    {
+      "id": 9,
+      "name": "Bike tank",
+      "category": "BIKE",
+      "image": "https://ipfs.io/ipfs/Qmdfkyog7EGsEzaNamLRTYnzsmZtoHZme21ifZRZXeKugW",
+      "price": "1.25",
+      "rating": 4,
+      "stock": 2
+    },
+    {
+      "id": 10,
+      "name": "Bike gear lever",
+      "category": "BIKE",
+      "image": "https://ipfs.io/ipfs/Qmdtsngp9roqa7mvMuHU9JxQQyio1VLBqAviE7wiW1UkcS",
+      "price": "1.75",
+      "rating": 4,
+      "stock": 2
+    },
+    {
+      "id": 11,
+      "name": "Bike break lever",
+      "category": "BIKE",
+      "image": "https://ipfs.io/ipfs/QmPDrvQfHx3ZhE4qiTUHesfgCAENH2dX7Si6cxzBEdoXbs",
+      "price": "1.65",
+      "rating": 3,
+      "stock": 1
+    },
+    {
+      "id": 12,
+      "name": "Bike break pad",
+      "category": "BIKE",
+      "image": "https://ipfs.io/ipfs/QmU7MTMmjEqLWYsAKmYUqDBc4BqvAovpVYhrztusAywoWn",
+      "price": "1.25",
+      "rating": 2,
+      "stock": 1
+    },
+    {
+      "id": 13,
+      "name": "Car tail light",
+      "category": "CAR",
+      "image": "https://ipfs.io/ipfs/QmZdvE832mM9Mukx4dR9zzbcnREzi2uYvZBFjJVScDguzA",
+      "price": "0.05",
+      "rating": 4,
+      "stock": 1
+    },
+    {
+      "id": 14,
+      "name": "Car spoiler",
+      "category": "CAR",
+      "image": "https://ipfs.io/ipfs/QmTafxRC9Bd8expQmkoyFuH7YspxLEczpEFKrsTNx84YY5",
+      "price": "0.20",
+      "rating": 4,
+      "stock": 2
+    },
+    {
+      "id": 15,
+      "name": "Car cluster",
+      "category": "CAR",
+      "image": "https://ipfs.io/ipfs/QmXiXrKdhcBn412ZX5y7XKZKEoLC9AoAXk7ddVJHYfoQLA",
+      "price": "0.15",
+      "rating": 3,
+      "stock": 0
+    },
+    {
+      "id": 16,
+      "name": "Car tyre",
+      "category": "CAR",
+      "image": "https://ipfs.io/ipfs/Qmc6UavEGdCsw5YhBe3RYoFgYMP2TzVkVfYfFnraKLtVZa",
+      "price": "2",
+      "rating": 4,
+      "stock": 3
+    },
+    {
+      "id": 17,
+      "name": "Car diskbrake",
+      "category": "CAR",
+      "image": "https://ipfs.io/ipfs/QmSMSD9VFKWG8uSkAThERQ3Vr9xiLGCCDNm6KvYmh86Hbo",
+      "price": "1.5",
+      "rating": 3,
+      "stock": 0
+    },
+    {
+      "id": 18,
+      "name": "Car door handle",
+      "category": "CAR",
+      "image": "https://ipfs.io/ipfs/QmSaPBycAEdBQVu2ug2RPwRoJwuCfei3eH6jhdAHWfwZAm",
+      "price": "1",
+      "rating": 3,
+      "stock": 0
+    }
+  ]
+}

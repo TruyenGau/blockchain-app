@@ -1,0 +1,60 @@
+/* Custom styles for Navbar */
+.navbar {
+  background-color: #131921 !important;
+}
+.navbar-brand {
+  padding-left: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color:white; /* Change the color as needed */
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 18px;
+    color: white; /* Change the color as needed */
+    transition: color 0.3s ease;
+  }
+  .navbar-nav {
+    margin-left: auto; /* Push all items to the right */
+  }
+  .navbar-nav .nav-link {
+    text-align: right; /* Align text to the right */
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #007bff; /* Change the color as needed */
+  }
+  
+  /* Custom styles for active link */
+  /* .nav-item.active .nav-link {
+    color: blue ; /* Change the color as needed 
+  } */
+  
+  .nav-linkactive {
+    color: yellow;
+  }
+
+
+  /* Custom styles for toggler icon */
+  .navbar-toggler {
+    border-color: #007bff; /* Change the color as needed */
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/></svg>');
+  }
+  
+  /* Custom styles for Navbar background */
+  .navbar {
+    background-color: #f8f9fa; /* Change the color as needed */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .navbar-nav {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+  
