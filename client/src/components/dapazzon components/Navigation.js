@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
-const Navigation = ({ account, setAccount}) => {
+const Navigation = ({ account, setAccount }) => {
 
   const connectHandler = async () => {
     const accounts = await window.ethereum.request({
@@ -10,30 +10,31 @@ const Navigation = ({ account, setAccount}) => {
     });
     const account = ethers.utils.getAddress(accounts[0]);
     setAccount(account);
+
   };
   const [userData, setUserData] = useState(null);
 
   const history = useNavigate();
   const callProductsPage = async () => {
-    try{
+    try {
       const res = await fetch('/product', {
         method: "GET",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json"
         },
-        credentials:"include"
+        credentials: "include"
       });
 
       const data = await res.json();
       console.log(data);
       setUserData(data);
 
-      if(!res.status === 200 ){
+      if (!res.status === 200) {
         const error = new Error(res.error);
         throw error;
       }
-    }catch (err){
+    } catch (err) {
       console.log(err);
       history('/login');
     }
@@ -42,11 +43,11 @@ const Navigation = ({ account, setAccount}) => {
     callProductsPage();
   }, []);
 
- 
+
   return (
     <nav>
-      <div  className="nav__brand">
-       {/* <p> <strong>Hey! { userData?.name}</strong></p> */}
+      <div className="nav__brand">
+        {/* <p> <strong>Hey! { userData?.name}</strong></p> */}
         {/* <strong>Hey! {title} </strong> */}
         <h3>Hey! {userData?.name}</h3>
       </div>

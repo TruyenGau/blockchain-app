@@ -1,9 +1,9 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "C:\\Users\\johnc\\OneDrive\\Desktop\\latest updated project major\\amazon-clone-dapp-main\\contracts\\Dappazon.sol": {
-      "lastModificationDate": 1706605783484,
-      "contentHash": "5c1004013454e656b8bb37f8709bf96e",
+    "E:\\NAM4_K2\\ChuyenDe\\bai1\\Blockchain-based-ecommerce-website\\client\\contracts\\Dappazon.sol": {
+      "lastModificationDate": 1744967396085,
+      "contentHash": "65c325128bada7310cd1f337b9f49388",
       "sourceName": "contracts/Dappazon.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -30,42 +30,7 @@
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "Dappazon"
-      ]
-    },
-    "C:\\Users\\johnc\\OneDrive\\Desktop\\testing\\client\\contracts\\Dappazon.sol": {
-      "lastModificationDate": 1711962805164,
-      "contentHash": "5c1004013454e656b8bb37f8709bf96e",
-      "sourceName": "contracts/Dappazon.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.9"
+        "^0.8.0"
       ],
       "artifacts": [
         "Dappazon"

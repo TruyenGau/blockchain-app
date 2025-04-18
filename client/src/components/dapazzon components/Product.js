@@ -8,15 +8,18 @@ import Rating from "./Rating";
 import close from "../assets/close.svg";
 
 const Product = ({ item, provider, account, dappazon, togglePop }) => {
-  const[order, setOrder] = useState(null) 
+  const [order, setOrder] = useState(null)
   const [hasBought, setHasBought] = useState(false)
 
   const fetchDetails = async () => {
     const events = await dappazon.queryFilter("Buy")
     const orders = events.filter(
-      (event) => event.args.buyer === account && event.args.itemId.toString() === item.id.toString()
-    )
-
+      (event) =>
+        event.args.buyer === account &&
+        event.args.itemId &&
+        item.id &&
+        event.args.itemId.toString() === item.id.toString()
+    );
     if (orders.length === 0) return
 
     const order = await dappazon.orders(account, orders[0].args.orderId)
@@ -24,14 +27,15 @@ const Product = ({ item, provider, account, dappazon, togglePop }) => {
   }
 
   const buyHandler = async () => {
-    const signer = await provider.getSigner()
+    const signer = await provider.getSigner();
 
-    // Buy item...
-    let transaction = await dappazon.connect(signer).buy(item.id, { value: item.cost })
-    await transaction.wait()
+    const transaction = await dappazon
+      .connect(signer)
+      .buy(item.id, 1, { value: item.price });
+    await transaction.wait();
 
-    setHasBought(true)
-  }
+    alert("Purchase successful!");
+  };
 
   useEffect(() => {
     fetchDetails()
@@ -51,20 +55,20 @@ const Product = ({ item, provider, account, dappazon, togglePop }) => {
 
           <p>{item.address}</p>
 
-          <h2>{ethers.utils.formatUnits(item.cost.toString(), "ether")} ETH</h2>
+          {/* <h2>{ethers.utils.formatUnits(item.cost.toString(), "ether")} ETH</h2> */}
 
           <hr />
 
           <h2>Overview</h2>
 
           <h6>
-            
+
             At Spare Mate Hub, we're your trusted destination for hassle-free automobile purchases. With our user-friendly website, finding your automobile parts is just a click away. Browse our extensive inventory of quality parts, backed by our commitment to transparency and customer satisfaction. Experience seamless transactions and peace of mind knowing that you're dealing with a reputable and reliable automotive partner. Unlock a world of convenience and trust with Spare Mate Hub.
-            </h6>
+          </h6>
         </div>
 
         <div className="product__order">
-          <h1>{ethers.utils.formatUnits(item.cost.toString(), "ether")} ETH</h1>
+          {/* <h1>{ethers.utils.formatUnits(item.cost.toString(), "ether")} ETH</h1> */}
 
           <p>
             FREE delivery <br />
@@ -105,12 +109,12 @@ const Product = ({ item, provider, account, dappazon, togglePop }) => {
             </div>
           )}
         </div>
-          <buttton onClick = {togglePop } className = "product__close">
-            <img src = {close} alt="Close" />
-          </buttton>
-        </div>
+        <buttton onClick={togglePop} className="product__close">
+          <img src={close} alt="Close" />
+        </buttton>
       </div>
-    
+    </div>
+
   );
 };
 

@@ -5,7 +5,7 @@ import { ethers } from "ethers";
 import Navigation from "./dapazzon components/Navigation";
 import Section from "./dapazzon components/Section";
 import Product from "./dapazzon components/Product";
-import LoginForm from "./dapazzon components/LoginForm/LoginForm";
+import CreateProduct from "./CreateProduct";
 
 // ABIs
 import Dappazon from "../abis/Dappazon.json";
@@ -18,27 +18,24 @@ function App() {
   const [dappazon, setDappazon] = useState(null);
   const [account, setAccount] = useState(null);
 
-  const [cycle, setCycle] = useState(null);
-  const [bike, setBike] = useState(null);
-  const [car, setCar] = useState(null);
+  const [cycle, setCycle] = useState([]);
+  const [bike, setBike] = useState([]);
+  const [car, setCar] = useState([]);
   const [item, setItem] = useState({});
   const [toggle, setToggle] = useState(false);
-  
-  
+
   const togglePop = (item) => {
     setItem(item);
-    toggle ? setToggle(false) : setToggle(true);
+    setToggle(!toggle);
   };
 
   const loadBlockchainData = async () => {
-    //Connect to blockchain - Ethers.js is used to make the connection
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     setProvider(provider);
 
     const network = await provider.getNetwork();
     console.log(network);
 
-    //Connect to smart contracts (Create JS versions)
     const dappazon = new ethers.Contract(
       config[network.chainId].dappazon.address,
       Dappazon,
@@ -46,42 +43,44 @@ function App() {
     );
     setDappazon(dappazon);
 
-    //Load products
-    const items = [];
+    const data = [];
     for (var i = 0; i < 18; i++) {
       const item = await dappazon.items(i + 1);
-      //console.log(item);
-      items.push(item);
+      data.push(item);
     }
-    console.log(items);
-    const car = items.filter((item) => item.category == "CAR");
-
-    const bike = items.filter((item) => item.category == "BIKE");
-
-    const cycle = items.filter((item) => item.category == "CYCLE");
+    const car = data.filter((item) => item.category == "CAR");
+    const bike = data.filter((item) => item.category == "BIKE");
+    const cycle = data.filter((item) => item.category == "CYCLE");
 
     setCycle(cycle);
     setBike(bike);
     setCar(car);
   };
+
   useEffect(() => {
     loadBlockchainData();
   }, []);
-  
+
+  const addNewProduct = (newProduct) => {
+    const updatedData = [...cycle, ...bike, ...car, newProduct];
+    const carUpdated = updatedData.filter((item) => item.category == "CAR");
+    const bikeUpdated = updatedData.filter((item) => item.category == "BIKE");
+    const cycleUpdated = updatedData.filter((item) => item.category == "CYCLE");
+
+    setCycle(cycleUpdated);
+    setBike(bikeUpdated);
+    setCar(carUpdated);
+  };
+
   return (
-    
-     
     <div>
-      
-      <Navigation account={account}  setAccount={setAccount} />
-      
+      <Navigation account={account} setAccount={setAccount} />
+      <CreateProduct dappazon={dappazon} provider={provider} addNewProduct={addNewProduct} />
       <h2>SPH best sellers</h2>
       {car && bike && cycle && (
         <>
           <Section title={"car"} items={car} togglePop={togglePop} />
-
           <Section title={"bike"} items={bike} togglePop={togglePop} />
-
           <Section title={"cycle"} items={cycle} togglePop={togglePop} />
         </>
       )}
